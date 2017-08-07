@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <assert.h>
+#include <exception>
 
 #include "Vector.h"
 
@@ -19,7 +20,7 @@ int main() {
         for (int i = 0; i < ARRSIZE; i++) {
           v1.push_back(arr[i]);
           assert(v1.size()==i+1);
-          assert(v1[v.size()-1]==arr[i]);
+          assert(v1[v1.size()-1]==arr[i]);
           assert(v1[0]==arr[0]);
           assert(!v1.empty());
           assert(v1.at(i)==arr[i]);
