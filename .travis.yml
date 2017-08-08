@@ -1,1 +1,5 @@
 language: c++
+
+script: g++ main.cpp
+
+after_script: ./a.out
