@@ -11,3 +11,5 @@ Design and implement a Vector class. Completing this assignment correctly will d
 * Your code must be readable, with comments, meaningful variable names, proper indentation, and formatting.
 
 * Note: you may not include the STL vector header file; you should implement each method completely.
+
+[![Build Status](https://travis-ci.com/cisc3130/1-vector.svg?token=sGqTPYKnjS4iVpK7fKg1&branch=master)](https://travis-ci.com/cisc3130/1-vector)
