@@ -26,14 +26,16 @@ int main() {
           assert(v1.at(i)==arr[i]);
         }
 
-				assert(v1.front()=v1[0]);
-				v1.front() = 3;
-				assert(v1[0]==3);
+	assert(v1.front()=v1[0]);
+	int tmp = v1.front();
+	v1.front() = 3;
+	assert(v1[0]==3);
+	v1.front() = tmp;
 
         Vector<int> v2;
-				for (int i = 0; i < ARRSIZE; i++) {
-					v2.push_back(v1[i]);
-				}
+	for (int i = 0; i < ARRSIZE; i++) {
+		v2.push_back(v1[i]);
+	}
         assert(v2.size()==v1.size());
         for(int i = 0; i < ARRSIZE; i++) {
           assert(v2.at(i) == v1.at(i));
