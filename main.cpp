@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <assert.h>
-#include <exception>
+#include <stdexcept>
 
 #include "Vector.h"
 
