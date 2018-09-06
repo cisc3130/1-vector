@@ -1,15 +1,7 @@
-# Homework 1: Implement a vector class
+# Homework 1: Implement vector methods
 
-Design and implement a Vector class. Completing this assignment correctly will demonstrate mastery of vectors, templates, C++ classes and dynamic memory allocation.
+Modify the file Vector.java to implement the three last methods. The comments in the file indicate how they should be implemented.
 
-## Requirements and grading
+Test your implementation by compiling and running Vector.java.
 
-* Modify the file Vector.h to fill in the methods that are missing.
-
-* Test your implementation by compiling and running main.cpp.
-
-* Your code must be readable, with comments, meaningful variable names, proper indentation, and formatting.
-
-* Note: you may not include the STL vector header file; you should implement each method completely.
-
-[![Build Status](https://travis-ci.com/cisc3130/1-vector.svg?token=sGqTPYKnjS4iVpK7fKg1&branch=master)](https://travis-ci.com/cisc3130/1-vector)
+Your code must be readable, with comments, meaningful variable names, proper indentation, and formatting.
