@@ -4,7 +4,7 @@ import java.util.RandomAccess;
 import java.lang.RuntimeException;
 import java.util.Arrays;
 
-public class VectorAnswers<E> extends AbstractList<E> implements List<E>, RandomAccess {
+public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess {
   
   protected Object[] data;
   protected int size;
@@ -28,11 +28,11 @@ public class VectorAnswers<E> extends AbstractList<E> implements List<E>, Random
    	data = Arrays.copyOf(data, newCapacity); 
   }
   
-  public VectorAnswers() {
+  public Vector() {
   	this(10); 
   }
   
-  public VectorAnswers(int initialCapacity) {
+  public Vector(int initialCapacity) {
    	data = new Object[initialCapacity];
     size = 0;
   }
@@ -70,9 +70,9 @@ public class VectorAnswers<E> extends AbstractList<E> implements List<E>, Random
   }
   
   public static void main(String[] args) {
-  	VectorAnswers<Integer> intlist = new VectorAnswers<Integer>();
-    VectorAnswers<String> stringlist = new VectorAnswers<String>();
-    VectorAnswers<VectorAnswers<Integer>> intveclist = new VectorAnswers<VectorAnswers<Integer>>();
+  	Vector<Integer> intlist = new Vector<Integer>();
+    Vector<String> stringlist = new Vector<String>();
+    Vector<Vector<Integer>> intveclist = new Vector<Vector<Integer>>();
 
 		for (Integer i = 0; i < 10; i++) {
 				intlist.add(i);
