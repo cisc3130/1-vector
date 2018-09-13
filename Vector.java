@@ -56,16 +56,28 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess 
   }
   
   public void add(int index, E element) {
-		// Add element at index.
+	if(size++==data.length) grow();	// insert the given element into index, and shift the elements after index.
+        for(int i=size-1;i>=index;i--){
+            data[i+1]=data[i];
+        }
+        data[index]=element;
   }
   
   public E remove(int index) {
-		// Remove the element at index. Make sure there are no gaps
-		// Return the removed element
+	E removed=data(index);	// Remove the element at index. Make sure there are no gaps
+        for(int i=size-1; i>=index;i--){
+            data[i]=data[i-1];
+        }		
+        data[size-1]=null;
+        return removed;// Return the removed element
   }
   
 	public int indexOf(Object o) {
-		// Returns the index of the first occurrence of the specified element 
+	for(int i=0;i<size;i++){
+            if(data[i].equals(o))
+                return i;
+        }	// Returns the index of the first occurrence of the specified element 
+        return -1;
 		// in this list, or -1 if this list does not contain the element. 
   }
   
@@ -82,4 +94,3 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess 
 		System.out.println(intlist.indexOf("seven"));
   }
 }
-
