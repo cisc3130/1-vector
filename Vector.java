@@ -55,18 +55,29 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess 
     return true;
   }
   
-  public void add(int index, E element) {
-		// Add element at index.
+  public void add (int index, E element) {
+	if (index < 0) throw new IndexOutofBoundsException(“”); //check if index is valid
+	while (index > data.length){ //if index is too large, grow it
+		grow();
+	}
+	for (int i = index; i < data.length; i++){
+		element = set(i, element); //recursive replacement until end of vector
+	}
   }
-  
-  public E remove(int index) {
-		// Remove the element at index. Make sure there are no gaps
-		// Return the removed element
+
+  public E remove (int index) {
+	rangeCheck(index); //range check for no errors
+	E otherelement = null; //we need to return an element, it’s initialized here
+	for (int i = data.length - 1; i > index; i--){
+		otherelement = set(i, otherelement); //modified add code (reversed) so it removes)
+	}
+	return otherelement;
   }
-  
-	public int indexOf(Object o) {
-		// Returns the index of the first occurrence of the specified element 
-		// in this list, or -1 if this list does not contain the element. 
+
+  public int indexOf(Object o) {
+	for (int i = 0; i < data.length; i++){
+		if(data[i].equals(o)) return I; //for loop, first element that matches is returned
+	}
   }
   
   public static void main(String[] args) {
