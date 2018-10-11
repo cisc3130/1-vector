@@ -51,21 +51,51 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess 
   
   public boolean add(E element) {
    	if (size == data.length) grow(); 
-    data[size++] = element;
+    data[size] = element;
+    size++;
     return true;
   }
   
   public void add(int index, E element) {
-		// Add element at index.
+	if(size++==data.length) grow();	// insert the given element into index, and shift the elements after index.
+        for(int i=size-2;i>=index;i--){ //because size was incremented once in line 64, so no need to increment size in the block        
+            data[i+1]=data[i];            
+        }
+        data[index]=element;
+        
+        for(int i=0;i<size;i++)
+            System.out.print(data[i]+" ");
   }
   
   public E remove(int index) {
-		// Remove the element at index. Make sure there are no gaps
-		// Return the removed element
+        System.out.println("the size before remove is "+size);
+        System.out.println(" the order before change is ");
+        for(int i=0;i<size;i++)
+            System.out.print(data[i]+" ");
+        System.out.println();
+	E removed=data(index);	// Remove the element at index. Make sure there are no gaps
+        //data[index]=null;
+        if(size++==data.length) grow();
+        for(int i=index;i<size;i++){
+            data[i]=data[i+1];
+        } 
+        size=size-2;//because size was incremented once in line 77, so size must minus 2 inorder to decrease size by 1
+        System.out.println("The size after remove is "+size);
+        System.out.println("The order after remove is ");
+        for(int i=0;i<size;i++)
+            System.out.print(data[i]+" ");
+        System.out.println();
+        System.out.println(removed +" is removed ");
+        return removed;// Return the removed element
   }
   
 	public int indexOf(Object o) {
-		// Returns the index of the first occurrence of the specified element 
+          
+	for(int i=0;i<size;i++){
+            if(data[i].equals(o))
+                return i;
+        }	// Returns the index of the first occurrence of the specified element 
+        return -1;
 		// in this list, or -1 if this list does not contain the element. 
   }
   
@@ -80,6 +110,10 @@ public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess 
 
 		System.out.println(intlist.indexOf(7));
 		System.out.println(intlist.indexOf("seven"));
+               intlist.remove(5);
+                System.out.println("the index of 5 after change is "+intlist.indexOf(5));
+                System.out.println("the index of 7 after change contains "+intlist.indexOf(7));
+                intlist.add(5,6);
   }
 }
-
+// Junjian Jiang @rivlev 
