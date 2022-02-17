@@ -6,4 +6,6 @@ Test your implementation by compiling and running Vector.java.
 
 Your code must be readable, with comments, meaningful variable names, proper indentation, and formatting.
 
+mention @dkaterenchuk and @rivlev in the pull request
+
 # Your code must compile and run. Code that does not compile will receive a grade of zero.
